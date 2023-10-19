@@ -161,6 +161,7 @@ div.col {
     padding-left: 60px;
     padding-right: 60px;
     padding-bottom: 20px;
+    padding-top: 30px;
 }
 
 

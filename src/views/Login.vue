@@ -2,6 +2,12 @@
     <div class="doxon">
         <div class="left-side1">
             <div class="doxon">
+                <img src="../picture/html.png" class="imgcourse" />
+                <div class="im">
+                    <img src="../picture/ty.png" class="imgcourse" />
+                    <img src="../picture/javascript.png" class="imgcourse" />
+                </div>
+                
             </div>
         </div>
 
@@ -28,7 +34,7 @@
                                             <label for="floatingPassword">Password</label>
                                         </div>
                                         <div class="btnn">
-                                           
+
                                             <a href="/Allcourse" class="btn btn-primary" type="button">Submit</a>
                                         </div>
                                     </form>
@@ -92,8 +98,6 @@
             </div>
         </div>
     </div>
-
-
 </template>
 <script>
 //importing bootstrap 5 Modules
@@ -137,9 +141,9 @@ export default {
     display: flex;
 
 
-} 
+}
 
-.doxon{
+.doxon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,24 +153,25 @@ export default {
 
 div.col-lg-6.px-lg-4 {
     width: 500px;
-} 
-
-.left-side1, .right-side1 {
-  flex: 1; 
 }
 
-.left-side1{
+.left-side1,
+.right-side1 {
+    flex: 1;
+}
+
+.left-side1 {
     background: linear-gradient(180deg, #7E2CE7 0%, #D743FC 69.06%);
-} 
+}
 
-.right-side1{
+.right-side1 {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    background-color: rgba(177, 177, 177, 0.473);
+    background-color: rgba(255, 255, 255, 0.856);
 
-} 
+}
 
 .boxon {
     display: flex;
