@@ -57,26 +57,29 @@
                                         <h3 class="mb-4">Register</h3>
                                     </div>
                                     <form action="index.html">
+
                                         <div class="form-floating mb-3">
                                             <input class="form-control" id="username" type="email"
                                                 placeholder="name@example.com" required>
                                             <label for="username">Username</label>
                                         </div>
-                                        <div class="form-floating mb-3">
-                                            <input class="form-control" id="floatingInput" type="email"
-                                                placeholder="name@example.com" required>
-                                            <label for="floatingInput">Email address</label>
-                                        </div>
+
+                                        
                                         <div class="form-floating mb-3">
                                             <input class="form-control" id="floatingPassword" type="password"
-                                                placeholder="Password" required>
+                                            placeholder="Password" required>
                                             <label for="floatingPassword">Password</label>
                                         </div>
-
+                                        
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control"
+                                                placeholder="name@example.com" >
+                                            <label >Email address</label>
+                                        </div>
                                         <div class="form-group">
                                             <div class="btnn">
-                                                <a href="/login" class="btn btn-primary" id="regidter" type="button"
-                                                    name="registerSubmit">Register</a>
+                                                <btn @click="registerUser" href="/login" class="btn btn-primary" id="regidter" type="button"
+                                                    name="registerSubmit">Register</btn>
                                             </div>
                                         </div>
 
@@ -101,10 +104,33 @@
 </template>
 <script>
 //importing bootstrap 5 Modules
+import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 export default {
     name: 'LoginV',
     methods: {
+        async registerUser() {
+      const username = document.getElementById('username').value; // Collect the username input
+      const password = document.getElementById('floatingPassword').value; // Collect the password input
+
+      try {
+        // Send a POST request to your registration API
+        const response = await axios.post('http://localhost:9000/member', {
+          username,
+          password,
+        });
+
+        // Handle the response as needed (e.g., show a success message or redirect to login)
+        console.log('Registration success:', response.data);
+        alert('register successful!')
+        this.userlogin = true,
+        this.userregister = false
+      } catch (error) {
+        // Handle registration errors (e.g., display an error message)
+        console.error('Registration error:', error);
+        alert('register unsuccessful!')
+      }
+    },
         //user login button click event
         user_login() {
             this.userlogin = true,
@@ -114,14 +140,16 @@ export default {
         user_register() {
             this.userlogin = false,
                 this.userregister = true
-        }
+        },
     },
+    
     data: function () {
         return {
             userlogin: true,
             userregister: false
         }
-    }
+    },
+    
 }
 </script>
 
