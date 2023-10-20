@@ -12,3 +12,5 @@ app.config.productionTip = false;
 app.config.globalProperties.$http = axios;
 
 app.mount('#app');
+
+
